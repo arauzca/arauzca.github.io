@@ -1,7 +1,10 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+# Commit your activities to the Lord, and your plans will be established.
+# Proverbs 16:3
+# Encomienda al Señor tus acciones, y tus pensamientos serán afirmados.
+# Proverbios 16:3
+# Vertraue dem Herrn deine Pläne an, er wird dir Gelingen schenken.
+# Sprüche 16:3
 layout: default
 ---
 
