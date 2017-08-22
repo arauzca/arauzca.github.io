@@ -5,4 +5,4 @@
 layout: default
 ---
 
-![construct](https://octodex.github.com/images/constructocat2.jpg){:height="auto" width="auto"}
+![](https://octodex.github.com/images/constructocat2.jpg)
