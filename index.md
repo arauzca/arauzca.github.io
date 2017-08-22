@@ -5,4 +5,4 @@
 layout: default
 ---
 
-![github](./assets/images/github_under_construction.jpeg){:height="auto" width="auto"}
+![construct](https://octodex.github.com/images/constructocat2.jpg){:height="auto" width="auto"}
