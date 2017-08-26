@@ -1,10 +1,127 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Rubik');
 
 /* Bootstrap override */
-header {
-  width:    100%;
-}
+$white:  #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:  #000 !default;
+
+$blue:    #ccc !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$theme-colors: (
+        primary: #1A8B9D,
+        secondary: #B2D430,
+        success: $green,
+        info: $cyan,
+        warning: $yellow,
+        danger: $red,
+        light: #FFF5F5,
+        dark: $black
+) !default;
 
 @import "bootstrap";
+
+/* START MASTER CSS */
+@mixin menu-animation($translate, $transition) {
+  -webkit-transform: translateX($translate);
+  -ms-transform: translateX($translate);
+  transform: translateX($translate);
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+.navbar-side {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  background-color: #f7f7f9;
+  overflow-y: scroll;
+  z-index: 9990;
+  @include menu-animation(100%, 300ms ease);
+}
+
+@media screen and (max-width: 414px){
+  .navbar-side {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 415px){
+  .navbar-side {
+    width: 25%;
+  }
+}
+
+#navbarCloser {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  color: rgba(0,0,0,0.5)
+}
+
+.reveal {
+  @include menu-animation(0%, 300ms ease);
+}
+
+.navbar-side-item {
+  padding: 1.5rem 0;
+  margin: 0;
+  height: 5rem;
+}
+
+.side-link {
+  padding-left: 2rem;
+}
+
+.navbar-toggler {
+  opacity: 0.5;
+  filter: alpha(opacity=50)
+}
+
+.header-1 {
+  background-image: url("../images/IMG_1623.jpg");
+  background-repeat: no-repeat;
+  background-size: 6000px 5832px;
+  height: 1024px;
+}
+
+.side-link:hover {
+  background-color: theme-color("primary");
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 990;
+}

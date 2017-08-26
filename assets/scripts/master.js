@@ -17,6 +17,48 @@ function displayVers(data) {
   $('#votd').html(votd);
 }
 */
+$(document).ready(function () {
+    $(function () {
+       const windowHeight = window.innerHeight;
+
+       $('.header-1').css({
+           height: windowHeight
+       });
+    });
+
+    $(window).resize(function () {
+        const windowHeight = window.innerHeight;
+
+        $('.header-1').css({
+            height: windowHeight
+        });
+    });
+
+    $('#navbarSideButton').on('click', function () {
+        $('#navbarSide').addClass('reveal');
+        $('.overlay').show();
+    });
+
+    $('.navbar-side-item').on('click', function () {
+        $('#navbarSide').removeClass('reveal');
+        $('.overlay').hide();
+    });
+
+    $('#navbarSide').on('mouseleave', function (e) {
+        $('#navbarSide').removeClass('reveal');
+        $('.overlay').hide();
+    });
+
+    $(document).on('scroll', function () {
+        if ( $('#navbarSide').is('.reveal') ) {
+            $('#navbarSide').removeClass('reveal');
+            $('.overlay').hide();
+
+        }
+    });
+
+});
+
 let s = skrollr.init({
     smoothScrolling: true,
     forceHeight: true
