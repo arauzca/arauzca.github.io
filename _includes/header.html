@@ -1,18 +1,21 @@
 <header>
-    <nav class="navbar navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">Carlos Arauz</a>
-        <button class="navbar-toggler navbar-toggler-right bg-dark" id="navbarSideButton" type="button" >
+    <nav id="navigation-bar" class="navbar navbar-dark fixed-top">
+        <a class="navbar-brand text-hide" href="#" data-menu-ignore>Carlos Arauz</a>
+        <a id="menu-toggle" href="#" class="btn btn-lg btn-dark border-0 rounded-0 toggle" data-menu-ignore>
             <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-        <div class="navbar-side bg-secondary" id="navbarSide">
-            <div class="navbar-nav">
-                <i id="navbarCloser" class="fa fa-window-close fa-2x" aria-hidden="true"></i>
-                <a class="navbar-side-item side-link" href="#section-link2" scroll-to="250">Active</a>
-                <a class="navbar-side-item side-link" href="#section-link2" scroll-to="500">Link</a>
-                <a class="navbar-side-item side-link" href="#section-link2" scroll-to="750">Link</a>
-                <a class="navbar-side-item side-link" href="#section-disable" scroll-to="3000">Disabled</a>
+        </a>
+        <div id="sidebar-wrapper">
+            <a id="menu-close" href="#" class="btn btn-lg btn-close border-0 rounded-0 pull-right toggle" data-menu-ignore>
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+            <div class="text-hide sidebar-header">free space</div>
+            <div class="sidebar-nav">
+                <a class="sidebar-item side-link" href="#section-link0" scroll-to="0">Home</a>
+                <a id="section-1" class="sidebar-item side-link" href="#section-link1" scroll-to="">Section 1</a>
+                <a class="sidebar-item side-link" href="#section-link2" scroll-to="750">Link</a>
+                <a class="sidebar-item side-link" href="#section-disable" scroll-to="3000">Disabled</a>
+                <!-- insert more side-items if you so choose -->
             </div>
-            <!-- insert more side-items if you so choose -->
         </div>
         <div class="overlay"></div>
     </nav>

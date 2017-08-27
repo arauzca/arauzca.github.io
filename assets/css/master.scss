@@ -3,6 +3,11 @@
 ---
 @import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Rubik');
 
+body,
+a {
+  font-family: 'Inconsolata', sans-serif;
+}
+
 /* Bootstrap override */
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -16,7 +21,7 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:  #000 !default;
 
-$blue:    #ccc !default;
+$blue:    #0092CA !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -28,89 +33,125 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
 $theme-colors: (
-        primary: #1A8B9D,
-        secondary: #B2D430,
+        primary: $blue,
+        secondary: #393E46,
         success: $green,
         info: $cyan,
         warning: $yellow,
         danger: $red,
-        light: #FFF5F5,
-        dark: $black
+        light: $gray-200,
+        dark: $gray-900
 ) !default;
 
 @import "bootstrap";
 
-/* START MASTER CSS */
-@mixin menu-animation($translate, $transition) {
-  -webkit-transform: translateX($translate);
-  -ms-transform: translateX($translate);
-  transform: translateX($translate);
+/* BEGIN MASTER CSS */
+@mixin menu-animation($transition) {
   -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
   transition: $transition;
 }
 
-.navbar-side {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding-top: 50px;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  background-color: #f7f7f9;
-  overflow-y: scroll;
-  z-index: 9990;
-  @include menu-animation(100%, 300ms ease);
-}
-
 @media screen and (max-width: 414px){
-  .navbar-side {
+  #sidebar-wrapper {
+    margin-right: -100%;
+  }
+
+  #sidebar-wrapper.active {
     width: 100%;
+    right: 100%;
   }
 }
 
 @media screen and (min-width: 415px){
-  .navbar-side {
-    width: 25%;
+  #sidebar-wrapper {
+    margin-right: -250px;
+  }
+
+  #sidebar-wrapper.active {
+    width: 250px;
+    right: 250px;
   }
 }
 
-#navbarCloser {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  color: rgba(0,0,0,0.5)
+body {
+  background-color: theme-color('light');
 }
 
-.reveal {
-  @include menu-animation(0%, 300ms ease);
+#menu-toggle {
+  background-color: rgba(0,0,0,0.3);
 }
 
-.navbar-side-item {
-  padding: 1.5rem 0;
+#sidebar-wrapper {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0;
+  background-color: theme-color("dark");
+  overflow-y: auto;
+  z-index: 9990;
+  @include menu-animation(all 0.4s ease 0s);
+
+  .active {
+    @include menu-animation(all 0.4s ease 0s);
+  }
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin: 5px 0 0 5px;
+}
+
+.sidebar-nav {
+  position: relative;
   margin: 0;
-  height: 5rem;
+  padding: 0;
+}
+
+.sidebar-header {
+  width: 100%;
+  height: 55px;
+}
+
+.sidebar-item {
+  display: block;
+  padding: 0.5em 0;
+  margin: 0;
+  height: 2.5em;
 }
 
 .side-link {
   padding-left: 2rem;
-}
-
-.navbar-toggler {
-  opacity: 0.5;
-  filter: alpha(opacity=50)
-}
-
-.header-1 {
-  background-image: url("../images/IMG_1623.jpg");
-  background-repeat: no-repeat;
-  background-size: 6000px 5832px;
-  height: 1024px;
+  color: lighten(theme-color('dark'), 35%);
 }
 
 .side-link:hover {
-  background-color: theme-color("primary");
+  text-decoration: none;
+  color: theme-color("dark");
+  background-color: lighten(theme-color('dark'), 35%);
+}
+
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+.btn-lg {
+  padding: 13px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;;
+}
+
+.btn-close, .btn-close:hover {
+  color: theme-color("dark");
+  background-color: lighten(theme-color('dark'), 35%);
 }
 
 .overlay {
@@ -121,7 +162,12 @@ $theme-colors: (
   right: 0;
   bottom: 0;
   cursor: pointer;
-  background-color: #000;
-  opacity: 0.6;
+  background-color: rgba(0,0,0,0.6);
   z-index: 990;
+}
+
+.header-1 {
+  background-image: url("../images/IMG_1623.jpg");
+  background-repeat: no-repeat;
+  background-size: (6000*0.25)px (5832*0.25)px;
 }
