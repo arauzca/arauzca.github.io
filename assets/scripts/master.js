@@ -17,19 +17,30 @@ function displayVers(data) {
   $('#votd').html(votd);
 }
 */
-(function () {
-    /* begin: banner-resize-actions */
+const offset = 50;
+
+const adjustElements = () => {
     const windowHeight = window.innerHeight;
 
     $('.header-1').css({
         height: windowHeight
     });
 
-    $('#section-1').attr('scroll-to', windowHeight);
-    /* end: banner-resize-actions */
-})();
+    $('#to-section-1').attr('scroll-to', windowHeight);
+    $('#verse-1').css({
+        top: offset
+    });
+    $('#verse-2').css({
+        top: offset + (windowHeight / 3)
+    });
+    $('#verse-3').css({
+        top: offset + ((windowHeight + windowHeight) / 3)
+    });
+};
 
 $(document).ready(function () {
+    adjustElements();
+
     /* begin: menu-controller */
     $('#menu-toggle').on('click', function ( e ) {
         e.preventDefault();
@@ -50,25 +61,22 @@ $(document).ready(function () {
     });
     /* end: menu-controller */
 
-    /* being: on-resize-actions
-     *        everything inside [banner-resize-actions] must be updated inside the handler
-     */
     $(window).resize(function () {
-        const windowHeight = window.innerHeight;
-
-        $('.header-1').css({
-            height: windowHeight
-        });
-
-        $('#section-1').attr('scroll-to', windowHeight);
+        adjustElements();
     });
-    /* end: on-resize-actions */
-
 
     /* SKROLLR JS CONFIG */
     let s = skrollr.init({
         smoothScrolling: true,
-        forceHeight: false
+        forceHeight: false,
+        /*beforerender: function(data) {
+            return data.direction === 'down';
+        },*/
+        constants: {
+            versebott1: () => Number.parseInt((window.innerHeight / 3) - offset),
+            versebott2: () => Number.parseInt(2 * (window.innerHeight / 3) - offset),
+            winheight: () => window.innerHeight
+        }
     });
 
     /* SKROLLR MENU CONFIG */

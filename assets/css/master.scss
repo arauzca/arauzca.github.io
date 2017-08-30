@@ -3,11 +3,6 @@
 ---
 @import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Rubik');
 
-body,
-a {
-  font-family: 'Inconsolata', sans-serif;
-}
-
 /* Bootstrap override */
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -80,6 +75,11 @@ body {
   background-color: theme-color('light');
 }
 
+body,
+a {
+  font-family: 'Inconsolata', sans-serif;
+}
+
 #menu-toggle {
   background-color: rgba(0,0,0,0.3);
 }
@@ -99,6 +99,18 @@ body {
   .active {
     @include menu-animation(all 0.4s ease 0s);
   }
+}
+
+#verse-1 {
+
+}
+
+#verse-2 {
+
+}
+
+#verse-3 {
+
 }
 
 .navbar {
@@ -144,7 +156,7 @@ body {
 }
 
 .btn-lg {
-  padding: 13px 16px;
+  padding: 11px 16px;
   font-size: 18px;
   line-height: 1.3333333;;
 }
@@ -167,7 +179,16 @@ body {
 }
 
 .header-1 {
+  position: relative;
   background-image: url("../images/IMG_1623.jpg");
   background-repeat: no-repeat;
   background-size: (6000*0.25)px (5832*0.25)px;
+}
+
+.verse {
+  position: absolute;
+}
+
+.footer-1 {
+  height: 300px
 }

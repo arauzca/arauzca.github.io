@@ -1,4 +1,78 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-// TODO: change Parallax effect of elements in index.html to skrollr.stylesheets
+#section-0 {
+  -skrollr-animation-name: animation1;
+}
+
+#verse-1 {
+  -skrollr-animation-name: animation2;
+}
+
+#verse-2 {
+  -skrollr-animation-name: animation3;
+}
+
+#verse-3 {
+  -skrollr-animation-name: animation4;
+}
+
+@-skrollr-keyframes animation1 {
+  skrollr-#{0} {
+    background-position: -1920px 0px;
+  }
+
+  skrollr-#{_winheight} {
+    background-position: -1920px -1024px;
+  }
+}
+
+@-skrollr-keyframes animation2 {
+  skrollr-#{0} {
+    opacity: 1;
+    left: 5%;
+    top: 5%;
+  }
+
+  skrollr-#{_versebott1} {
+    opacity: 0;
+    left: 10%;
+    top: 10%;
+  }
+}
+
+@-skrollr-keyframes animation3 {
+  skrollr-#{0} {
+    opacity: 0;
+    right: -5%;
+    top: 40%;
+  }
+
+  skrollr-#{_versebott1} {
+    opacity: 1;
+    right: 5%;
+  }
+
+  skrollr-#{_versebott2} {
+    opacity: 0;
+    right: 10%;
+  }
+}
+
+@-skrollr-keyframes animation4 {
+  skrollr-#{_versebott1} {
+    opacity: 0;
+    top: 70%;
+    left: -5%;
+  }
+
+  skrollr-#{_versebott2} {
+    opacity: 1;
+    top: 70%;
+    left: 5%;
+  }
+
+  skrollr-top-top {
+    top: 80%;
+  }
+}
