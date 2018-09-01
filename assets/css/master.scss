@@ -38,7 +38,7 @@ $theme-colors: (
         dark: $gray-900
 ) !default;
 
-@import "bootstrap";
+@import "bootstrap-4/css/bootstrap.min.css";
 
 /* BEGIN MASTER CSS */
 @mixin menu-animation($transition) {
