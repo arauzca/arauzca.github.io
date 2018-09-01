@@ -32,14 +32,6 @@ sass:
     sass_dir: _sass
     style:    compress
 
-defaults:
-  -
-    scope:
-      path: "verses"
-      type: "pages"
-    values:
-      category: "verse"
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

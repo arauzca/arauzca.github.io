@@ -1,22 +1,3 @@
-/*
-$('document').ready(function() {
-  $.ajax({
-    url:      'http://labs.bible.org/api/?passage=votd&formatting=para&type=json&callback=displayVers',
-    async:    false,
-    type:     'POST',
-    dataType: 'jsonp',
-    jsonp:    false,
-    jsonpCallback: "displayVers"
-  });
-});
-
-function displayVers(data) {
-  let votd = data[0];
-  votd = "<div class='verse-text'>" + votd.text + "</div><div class='verse-ref'>" + votd.bookname + " " + votd.chapter + ": " + votd.verse + "</div>";
-  votd = $(votd).find("a").remove().end();
-  $('#votd').html(votd);
-}
-*/
 const offset = 50;
 
 const adjustElements = () => {
