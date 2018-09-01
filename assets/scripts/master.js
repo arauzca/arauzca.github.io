@@ -41,7 +41,7 @@ const adjustElements = () => {
 $(document).ready(function () {
     adjustElements();
 
-    /* begin: menu-controller */
+    /* start: menu-controller */
     $('#menu-toggle').on('click', function ( e ) {
         e.preventDefault();
         $('#sidebar-wrapper').toggleClass('active');
@@ -65,62 +65,67 @@ $(document).ready(function () {
         adjustElements();
     });
 
-    /* SKROLLR JS CONFIG */
-    let s = skrollr.init({
-        smoothScrolling: true,
-        forceHeight: false,
-        /*beforerender: function(data) {
-            return data.direction === 'down';
-        },*/
-        constants: {
-            versebott1: () => Number.parseInt((window.innerHeight / 3) - offset),
-            versebott2: () => Number.parseInt(2 * (window.innerHeight / 3) - offset),
-            winheight: () => window.innerHeight
-        }
-    });
+    const controller = new ScrollMagic.Controller();
 
-    /* SKROLLR MENU CONFIG */
-    skrollr.menu.init(s, {
-        //skrollr will smoothly animate to the new position using `animateTo`.
-        animate: true,
+    /* start: banner animation */
+    const bannerTween = new TweenMax.fromTo('#banner', 2, {'background-position': '-1920px 0px'}, {'background-position': '-1920px -1024px'});
+    const bannerScene = new ScrollMagic.Scene({
+      triggerElement: '#section-0',
+      triggerHook:    'onLeave',
+      duration:       window.innerHeight
+    })
+    .setTween(bannerTween)
+    .addIndicators({name: 'Banner'})
+    .addTo(controller);
+    /* end: banner animation */
 
-        //The easing function to use.
-        easing: 'sqrt',
+    /* start: verse constants */
+    const verse_bottom_1 = Number.parseInt((window.innerHeight / 3) - offset);
+    const verse_bottom_2 = Number.parseInt(2 * (window.innerHeight / 3) - offset);
+    const verse_bottom_3 = 2 * verse_bottom_1;
+    /* end: verse constants */
 
-        //Multiply your data-[offset] values so they match those set in skrollr.init
-        scale: 1,
+    /* start: verse 1 animation */
+    const verseTween1 = new TweenMax.fromTo('#verse-1', 1, {opacity: 1, left: '5%', top: '5%'}, {opacity: 0, left: '10%', top: '10%'});
+    const verseScene1 = new ScrollMagic.Scene({
+      triggerElement: '#verse-1',
+      triggerHook:    'onLeave',
+      duration:       verse_bottom_1
+    })
+    .setTween(verseTween1)
+    .addIndicators({name: 'tween 1'})
+    .addTo(controller);
+    /* end: verse 1 animation */
 
-        //How long the animation should take in ms.
-        duration: function(currentTop, targetTop) {
-            let factor = Math.abs(currentTop - targetTop) / $(window).height();
-            factor = factor >= 0.25 ? 0.25 : factor;
-            //By default, the duration is hardcoded at 500ms.
-            return 1000 * (1 - factor);
+    /* start: verse 2 animation */
+    const verseTween2 = new TimelineMax();
+    verseTween2.set('#verse-2', {opacity: 0, right: '-5%', top: '40%'})
+    .to('#verse-2', 0.5, {opacity: 1, right: '5%', top: '45%'})
+    .to('#verse-2', 0.5, {opacity: 0, right: '10%'});
 
-            //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-            //return Math.abs(currentTop - targetTop) * 10;
-        },
+    const verseScene2 = new ScrollMagic.Scene({
+      triggerElement: '#verse-1',
+      triggerHook:    'onLeave',
+      duration:       verse_bottom_2
+    })
+    .setTween(verseTween2)
+    .addIndicators({name: 'tween 2'})
+    .addTo(controller);
+    /* end: verse 2 animation */
 
-        //If you pass a handleLink function you'll disable `data-menu-top` and `data-menu-offset`.
-        //You are in control where skrollr will scroll to. You get the clicked link as a parameter and are expected to return a number.
-        handleLink: function(link) {
-            return Number.parseInt($(link).attr("scroll-to"));//Hardcoding 400 doesn't make much sense.
-        },
+    /* start: verse 3 animation */
+    const verseTween3 = new TimelineMax();
+    verseTween3.set('#verse-3', {opacity: 0, left: '-5%', top: '70%'})
+    .to('#verse-3', 0.5, {opacity: 1, left: '5%', top: '75%'})
+    .to('#verse-3', 0.5, {opacity: 0, left: '10%'});
 
-        //By default skrollr-menu will only react to links whose href attribute contains a hash and nothing more, e.g. `href="#foo"`.
-        //If you enable `complexLinks`, skrollr-menu also reacts to absolute and relative URLs which have a hash part.
-        //The following will all work (if the user is on the correct page):
-        //http://example.com/currentPage/#foo
-        //http://example.com/currentDir/currentPage.html?foo=bar#foo
-        ///?foo=bar#foo
-        complexLinks: false,
-
-        //This event is triggered right before we jump/animate to a new hash.
-        change: function(newHash, newTopPosition) {
-            //Do stuff
-        },
-
-        //Add hash link (e.g. `#foo`) to URL or not.
-        updateUrl: false //defaults to `true`.
-    });
+    const verseScene3 = new ScrollMagic.Scene({
+      triggerElement: '#verse-2',
+      triggerHook:    'onLeave',
+      duration:       verse_bottom_3
+    })
+    .setTween(verseTween3)
+    .addIndicators({name: 'tween 3'})
+    .addTo(controller);
+    /* end: verse 3 animation */
 });
