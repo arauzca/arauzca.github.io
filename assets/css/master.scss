@@ -130,13 +130,13 @@ a {
 
 .side-link {
   padding-left: 2rem;
-  color: lighten(theme-color('dark'), 35%);
+  /* color: lighten(theme-color('dark'), 35%); */
 }
 
 .side-link:hover {
   text-decoration: none;
   color: theme-color("dark");
-  background-color: lighten(theme-color('dark'), 35%);
+  /* background-color: lighten(theme-color('dark'), 35%); */
 }
 
 .toggle {
@@ -151,7 +151,7 @@ a {
 
 .btn-close, .btn-close:hover {
   color: theme-color("dark");
-  background-color: lighten(theme-color('dark'), 35%);
+  /* background-color: lighten(theme-color('dark'), 35%); */
 }
 
 .overlay {
