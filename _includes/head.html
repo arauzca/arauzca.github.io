@@ -1,15 +1,9 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        {%- if page.title -%}
-        {{ page.title }}
-        {%- elsif site.title -%}
-        {{ site.title }}
-        {%- else -%}
-        NO TITLE
-        {%- endif -%}
-    </title>
-    <link type="text/css" rel="stylesheet" href="/assets/master.css">
-    <script src="/assets/javascript/cookies.js" charset="utf-8"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {%- seo -%}
+  <link type="text/css" rel="stylesheet" href="{{ "/assets/master.css" | relative_url }}">
+  {%- feed_meta -%}
+  <script src="{{ "/assets/javascript/cookies.js" | relative_url }}"></script>
 </head>

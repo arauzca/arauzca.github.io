@@ -1,7 +1,18 @@
-_site
+# MacOS System Files
 .DS_Store
+
+# Jekyll Files
+_site
 .jekyll
 .jekyll-metadata
+
+# Bundle Files
 .bundle
+
+# Caches
 .sass-cache
 .idea
+
+# NodeJS
+node_modules
+package-lock.json
