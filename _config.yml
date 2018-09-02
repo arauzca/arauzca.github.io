@@ -27,11 +27,9 @@ github_username:  arauzca
 markdown: kramdown
 # theme: minima
 plugins:
-  - bootstrap
-sass:
-    sass_dir: assets/css
-    style:    compress
-
+  - jekyll-feed
+  - jekyll-sitemap
+  
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
