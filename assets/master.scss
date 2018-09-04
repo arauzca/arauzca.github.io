@@ -3,10 +3,10 @@
 ---
 @import url('https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Nunito|Rubik|Caveat');
 @import "variables";
+@import "bootstrap_customization";
 @import "bootstrap/bootstrap";
 @import "syntax-highlighting";
 @import "bootstrap-4-jekyll/bootstrap-4-jekyll";
-@import "bootstrap_customization";
 @import "fontawesome/scss/fontawesome";
 @import "fontawesome/scss/solid.scss";
 @import "fontawesome/scss/brands.scss";
@@ -54,7 +54,7 @@ body {
 
 body,
 a {
-  font-family: 'Caveat', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 #menu-toggle {
@@ -144,7 +144,8 @@ a {
 }
 
 .header-1 {
-  position: relative;
+  height: 100%!important;
+  position: absolute;
   background-image: url("./images/IMG_1623.jpg");
   background-repeat: no-repeat;
   background-size: (6000*0.25)px (5832*0.25)px;
@@ -157,6 +158,7 @@ a {
 
 .verse {
   position: absolute;
+  font-family: 'Caveat', fantasy;
 }
 
 .footer-1 {

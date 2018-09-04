@@ -1,0 +1,12 @@
+global:
+  en:  "English"
+  de:  "German"
+  es:  "Spanish"
+main:
+  section0:
+    verse1: "In the beginning was the Word, and the Word was with God, and <span class='text-uppercase'>the Word was God.</span>"
+    lead1:  "John 1:1"
+    verse2: "Commit your activities to the Lord, and your plans will be established."
+    lead2:  "Proverbs 16:3"
+    verse3: "Listen, Israel: The Lord our God, the Lord is one."
+    lead3:  "Deuteronomy 6:4"

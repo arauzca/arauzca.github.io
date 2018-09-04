@@ -1,0 +1,12 @@
+global:
+  en:  "Englisch"
+  de:  "Deutsch"
+  es:  "Spanisch"
+main:
+  section0:
+    verse1: "Am Anfang war das Wort. Das Wort war bei Gott, und <span class='text-uppercase'>das Wort war Gott selbst.</span>"
+    lead1:  "Johannes 1:1"
+    verse2: "Vertraue dem Herrn deine Pläne an, er wird dir Gelingen schenken."
+    lead2:  "Sprüche 16:3"
+    verse3: "Höre, Israel, der Herr, unser Gott, ist ein einiger Herr."
+    lead3:  "5. Mose 6:4"

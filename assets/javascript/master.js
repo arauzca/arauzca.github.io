@@ -1,17 +1,12 @@
 const offset = 50;
 
-const adjustElements = () => {
+const adjust_elements = () => {
     const windowHeight = window.innerHeight;
 
-    $('.header-1').css({
-      height: windowHeight
-    });
-
-    $('.section-construction').css({
+    $('.page-section').css({
       'min-height': windowHeight
     });
 
-    $('#to-section-1').attr('scroll-to', windowHeight);
     $('#verse-1').css({
       top: offset
     });
@@ -23,8 +18,16 @@ const adjustElements = () => {
     });
 };
 
+const create_navbutton = (id, dest, time) => {
+  $( id ).click( function () {
+    $('html, body').animate({
+      scrollTop: $( dest ).offset().top
+    }, time);
+  });
+};
+
 $(document).ready(function () {
-    adjustElements();
+    adjust_elements();
 
     /* start: menu-controller */
     $('#menu-toggle').on('click', function ( e ) {
@@ -44,10 +47,14 @@ $(document).ready(function () {
             overflow: 'auto'
         });
     });
+
+    //nav buttons
+    create_navbutton('#to-top', '#section-0', 500);
+    create_navbutton('#to-section-1', '#section-1', 5000);
     /* end: menu-controller */
 
     $(window).resize(function () {
-        adjustElements();
+        adjust_elements();
     });
 
     const controller = new ScrollMagic.Controller();

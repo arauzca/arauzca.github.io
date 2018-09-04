@@ -1,0 +1,12 @@
+global:
+  en:  "Inglés"
+  de:  "Alemán"
+  es:  "Español"
+main:
+  section0:
+    verse1: "En el principio era el Verbo, y el Verbo era con Dios, y <span class='text-uppercase'>el Verbo era Dios.</span>"
+    lead1:  "Juan 1:1"
+    verse2: "Encomienda al Señor tus acciones, y tus pensamientos serán afirmados."
+    lead2:  "Proverbios 16:3"
+    verse3: "Oye, Israel: el Se&ntilde;or nuestro Dios, el Se&ntilde;or <span class='text-uppercase'>uno</span> es."
+    lead3:  "Deuteronomio 6:4"

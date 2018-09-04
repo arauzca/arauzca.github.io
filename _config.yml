@@ -23,12 +23,23 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: carauz90
 github_username:  arauzca
 
+languages:
+  - en
+  - de
+  - es
+
+exclude_from_localizations:
+  - assets
+  - README.md
+  - CNAME
+
 # Build settings
 markdown: kramdown
 # theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-multiple-languages-plugin
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -38,4 +49,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - update_boostrap.sh
+  - package-lock.json
+  - update_bootstrap.sh

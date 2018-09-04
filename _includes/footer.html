@@ -18,5 +18,28 @@
       </tr>
     </tbody>
     </table>
+    <a class="active" href="#">{{ site.languageNames[site.lang] }}</a>
+        {% for lang in site.languageNames %}
+        {% if lang[0] == site.lang %} {% continue %} {% endif %}
+        {% if page.namespace %}
+        <a href="{% tl {{ page.namespace }} {{ lang[0] }} %}">{{ lang[1] }}</a>
+        {% else %}
+        <a href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a>
+        {% endif %}
+        {% endfor %}
+
+<div style="background-color: #fff;">
+  <a class="active" href="#">{%- t global.{{ site.lang }} -%}</a>
+    {%- for lang in site.languages -%}
+      {%- if lang == site.lang -%} {%- continue -%} {%- endif -%}
+      {%- if lang == 'en' -%}
+        {%- capture link2 -%}{{ site.baseurl_root }}{{ page.url }}{%- endcapture -%}
+        <a href="{{ link2 }}" >{%- t global.en -%}</a>
+      {%- else -%}
+        {%- capture link3 -%}{{ site.baseurl_root }}/{{ lang }}{{ page.url }}{%- endcapture -%}
+        <a href="{{ link3 }}" >{%- t global.{{ lang }} -%}</a>
+      {%- endif -%}
+    {%- endfor -%}
+</div>
   </div>
 </footer>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.language | default: site.language | default: "en" }}">
+<html lang="{{ page.language | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
 
@@ -9,8 +9,8 @@
     {%- include footer.html -%}
 
     <!-- Bootstrap JS and jQuery -->
-    <script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | relative_url }}"></script>
-    <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | relative_url }}"></script>
+    <script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | prepend: site.baseurl_root }}"></script>
+    <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | prepend: site.baseurl_root }}"></script>
 
     <!-- ScrollMagic and TweenMax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"
@@ -23,7 +23,7 @@
             integrity="sha256-/6NS53KuMVgzxQozkNjhDjwcyDmv8Sk52zodr91uoo4="
             crossorigin="anonymous"></script>
 
-    <script src="{{ "/assets/javascript/master.js" | relative_url }}"></script>
+    <script src="{{ "/assets/javascript/master.js" | prepend: site.baseurl_root }}"></script>
   </body>
-  
+
 </html>

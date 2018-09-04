@@ -1,20 +1,12 @@
 ---
 # You dont need to edit this front matter
+# Commit your activities to the Lord, and your plans will be established.
+# Proverbs 16:3
 layout: default
 title: Carlos Arauz
 ---
 <script type="text/javascript">
-  let lang = get_cookie("lang");
-  switch(lang) {
-    case "de":
-      window.location = "/de/";
-      break;
-    case "es":
-      window.location = "/es/";
-      brewak;
-    case "en":
-    default:
-      window.location = "/en/";
-      break;
-  }
+  set_cookie("lang", "{{ site.lang }}");
 </script>
+{%- include section0.html -%}
+{%- include section1.html -%}
