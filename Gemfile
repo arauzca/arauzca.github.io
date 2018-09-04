@@ -21,4 +21,5 @@ gem 'github-pages', group: :jekyll_plugins
 group :jekyll_plugins do
    gem 'jekyll-feed', '~> 0.10.0'
    gem 'jekyll-multiple-languages-plugin', '~> 1.5', '>= 1.5.1'
+   gem 'sassc'
 end
